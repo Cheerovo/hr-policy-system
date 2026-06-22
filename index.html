@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>时代开弈集团 — TOM目标运营模型 · HR政策管理系统</title>
 <style>
-/* ===== MORANDI + WARM WATERCOLOR WASH DESIGN SYSTEM ===== */
+/* ===== LIGHT GRAY + COOL TONED DESIGN SYSTEM ===== */
 :root {
-  /* Background layers — warm greige base + light gray cards */
-  --bg-base: #FAF8F5;
-  --bg-wash: #F7F4F1;
-  --bg-surface: #F5F2EE;
-  --bg-surface-alt: #EDE9E4;
-  --bg-surface-hover: #E4DFD9;
-  --bg-sidebar: #F0EDE8;
+  /* Background layers — light gray base + cool gray cards */
+  --bg-base: #F3F4F6;
+  --bg-wash: #EEEFF3;
+  --bg-surface: #EBEDF1;
+  --bg-surface-alt: #E2E4EA;
+  --bg-surface-hover: #D9DCE3;
+  --bg-sidebar: #E8EAF0;
 
-  /* Text — warm charcoal hierarchy */
-  --text: #1F1B18;
-  --text-dim: #3D3630;
-  --text-muted: #5C534A;
-  --text-inverse: #F5F2EE;
+  /* Text — neutral charcoal hierarchy */
+  --text: #1A1A1E;
+  --text-dim: #3A3A42;
+  --text-muted: #5A5A64;
+  --text-inverse: #F3F4F6;
 
   /* Primary accent — berry rose red family */
   --accent: #C94F66;
@@ -32,28 +32,28 @@
   --brass-light: #F2949C;
   --brass-dim: #7A1E35;
 
-  /* Functional colors — harmonized with berry + warm gray */
+  /* Functional colors — harmonized with berry + cool gray */
   --danger: #F2949C;
   --danger-bg: #FDEDEF;
   --danger-text: #992F48;
   --success: #8AA89C;
   --success-bg: #EAF0EE;
   --success-text: #5A7868;
-  --warning: #A09888;
-  --warning-bg: #F0EEE8;
-  --warning-text: #7A7060;
+  --warning: #9595A0;
+  --warning-bg: #EDEDF2;
+  --warning-text: #6A6A78;
 
-  /* Borders & shadows — elevated depth layering, border-free premium */
-  --border: #D5CFC8;
-  --border-light: #E0DBD5;
-  --border-subtle: #EBE7E3;
-  --shadow-xs: 0 1px 2px rgba(40,30,20,0.04);
-  --shadow-sm: 0 2px 8px rgba(40,30,20,0.06), 0 1px 3px rgba(40,30,20,0.04);
-  --shadow-md: 0 4px 20px rgba(40,30,20,0.08), 0 2px 6px rgba(40,30,20,0.04);
-  --shadow-lg: 0 8px 32px rgba(40,30,20,0.10), 0 4px 12px rgba(40,30,20,0.05);
-  --shadow-xl: 0 16px 48px rgba(40,30,20,0.14), 0 6px 16px rgba(40,30,20,0.06);
-  --shadow-card: 0 1px 4px rgba(40,30,20,0.05), 0 4px 12px rgba(40,30,20,0.06);
-  --shadow-elevated: 0 2px 8px rgba(40,30,20,0.07), 0 8px 24px rgba(40,30,20,0.09);
+  /* Borders & shadows — elevated depth layering, neutral tones */
+  --border: #CDD0D8;
+  --border-light: #D8DBE3;
+  --border-subtle: #E3E5EC;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.12), 0 6px 16px rgba(0,0,0,0.06);
+  --shadow-card: 0 1px 4px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-elevated: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
 
   /* Radius */
   --radius: 14px;
@@ -82,37 +82,37 @@
   --tracking-wide: 0.5px;
   --tracking-label: 0.3px;
 
-  /* TOM dimension colors — warm muted spectrum with berry accent */
-  --d1: #9B9488;   /* warm stone gray */
-  --d1-bg: #F0EDE8;
-  --d2: #A08880;   /* warm taupe */
-  --d2-bg: #F2EDE9;
-  --d3: #B88982;   /* warm muted coral */
-  --d3-bg: #F5EDEA;
-  --d4: #C48980;   /* warm dusty rose */
-  --d4-bg: #F6EEEB;
-  --d5: #9B8E95;   /* warm mauve */
-  --d5-bg: #F2EFF2;
-  --d6: #A88A82;   /* warm brown-mauve */
-  --d6-bg: #F2EDEA;
-  --d7: #8E9088;   /* warm gray-green */
-  --d7-bg: #EEEFEC;
-  --d8: #9BA088;   /* warm sage */
-  --d8-bg: #EFF0EC;
-  --d9: #C9A389;   /* warm rust — channels & products */
-  --d9-bg: #F9F0EA;
+  /* TOM dimension colors — cool muted spectrum with berry accent */
+  --d1: #9195A0;   /* cool stone gray */
+  --d1-bg: #ECEDF2;
+  --d2: #8E8E9A;   /* cool taupe */
+  --d2-bg: #ECECF1;
+  --d3: #A08A96;   /* cool muted rose */
+  --d3-bg: #F0EBEF;
+  --d4: #B08A94;   /* cool dusty rose */
+  --d4-bg: #F2ECEF;
+  --d5: #9590A0;   /* cool mauve */
+  --d5-bg: #EEEDF3;
+  --d6: #988A94;   /* cool brown-mauve */
+  --d6-bg: #EEEAEF;
+  --d7: #8A8E92;   /* cool gray-green */
+  --d7-bg: #EAEBEE;
+  --d8: #919A90;   /* cool sage */
+  --d8-bg: #EBEDEB;
+  --d9: #B09890;   /* cool rust — channels & products */
+  --d9-bg: #F3EDEB;
 
-  /* Extended palette — warm-toned module/status/chart differentiation */
-  --c-blue: #8BA0B5;   --c-blue-bg: #EEF1F4;   --c-blue-text: #4A6888;
-  --c-teal: #93B0A0;   --c-teal-bg: #EEF4F0;   --c-teal-text: #4A7860;
-  --c-gold: #D9B67C;   --c-gold-bg: #FDF5EA;   --c-gold-text: #B87A30;
-  --c-purple: #B0A0C0; --c-purple-bg: #F2EFF6;
-  --c-cyan: #8A9E9E;   --c-cyan-bg: #EEF3F3;
-  --c-pink: #D0A0B2;   --c-pink-bg: #F8EEF2;
-  --c-green: #A8C488;  --c-green-bg: #F2F9EC;
-  --c-coral: #D99482;  --c-coral-bg: #FCEEE9;
-  --c-indigo: #8E8EAA; --c-indigo-bg: #EFEFF5;
-  --c-rust: #C9A389;   --c-rust-bg: #F9F0EA;
+  /* Extended palette — cool-toned module/status/chart differentiation */
+  --c-blue: #8A9CB5;   --c-blue-bg: #EDEFF4;   --c-blue-text: #4A6488;
+  --c-teal: #90AE9E;   --c-teal-bg: #ECF2EE;   --c-teal-text: #4A7460;
+  --c-gold: #D4B080;   --c-gold-bg: #FBF3E8;   --c-gold-text: #B07830;
+  --c-purple: #AEA0BE; --c-purple-bg: #F0EEF4;
+  --c-cyan: #889C9E;   --c-cyan-bg: #ECF1F2;
+  --c-pink: #CEA0B0;   --c-pink-bg: #F6ECF0;
+  --c-green: #A4C088;  --c-green-bg: #F0F7EA;
+  --c-coral: #D49484;  --c-coral-bg: #FAECE8;
+  --c-indigo: #8C8EA8; --c-indigo-bg: #EDEDF3;
+  --c-rust: #C0A090;   --c-rust-bg: #F7EEE8;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -798,7 +798,7 @@ tbody tr:hover { background: var(--bg-surface-hover); }
 .chart-legend-item { display: flex; align-items: center; gap: 6px; color: var(--text-dim); }
 .chart-legend-dot {
   width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0;
-  box-shadow: 1px 1px 3px rgba(40,30,20,0.1);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.08);
 }
 /* ===== ENHANCED TABLES ===== */
 .table-striped tbody tr:nth-child(even) { background: var(--bg-surface-alt); }
@@ -865,7 +865,7 @@ tbody tr:hover { background: var(--bg-surface-hover); }
   content: ''; position: absolute; bottom: -5px; left: 50%;
   width: 10px; height: 10px; background: var(--bg-surface);
   transform: translateX(-50%) rotate(45deg);
-  box-shadow: 3px 3px 6px rgba(40,30,20,0.08);
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.06);
 }
 
 /* Risk node highlight */
