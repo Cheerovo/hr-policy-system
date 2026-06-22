@@ -416,6 +416,18 @@ tbody tr:hover { background: var(--bg-surface-hover); }
 .tab:hover { color: var(--text); }
 .tab.active { color: var(--accent-dim); border-bottom-color: var(--accent); font-weight: 600; }
 
+/* ===== BOX TABS (Six-Box page-level tabs) ===== */
+.box-tabs { display: flex; gap: 4px; margin-bottom: 28px; flex-wrap: wrap; }
+.box-tab {
+  padding: 10px 22px; cursor: pointer; font-size: var(--text-base); color: var(--text-dim);
+  background: var(--bg-surface); border-radius: var(--radius); transition: var(--transition);
+  font-weight: 500; letter-spacing: var(--tracking-label); box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+}
+.box-tab:hover { color: var(--text); border-color: var(--border-subtle); }
+.box-tab.active { color: #fff; background: var(--accent-dim); border-color: var(--accent-dim); font-weight: 600; box-shadow: var(--shadow-md); }
+.box-section { animation: fadeIn .3s ease; }
+
 /* ===== GANTT ===== */
 .gantt-wrap {
   overflow-x: auto; background: var(--bg-surface);
@@ -1303,19 +1315,99 @@ function navTo(page, el) {
   mc.scrollTop = 0;
 }
 
-// ========== SIX-BOX RENDER WRAPPERS ==========
+// ========== SIX-BOX RENDER FUNCTIONS ==========
+
 // B1: 目的与目标 (Purposes) — 愿景战略 + 战略目标/OKR
-function renderB1(el) { renderD1(el); }
+function renderB1(el) {
+  el.innerHTML = `
+    <div class="page-header" style="margin-bottom:28px;">
+      <span class="dim-tag dim-tag-b1">BOX 1 · 目的与目标</span>
+      <h2>目的与目标 — Purposes</h2>
+      <p style="color:var(--text-muted);font-size:13px;margin-top:4px;">使命驱动 · 愿景牵引 · 核心价值观导航 · 战略目标清晰 · OKR指标体系</p>
+    </div>
+    <div class="box-tabs">
+      <div class="box-tab active" onclick="switchB1View('vision', this)">愿景与战略定位</div>
+      <div class="box-tab" onclick="switchB1View('okr', this)">OKR 核心目标</div>
+    </div>
+    <div id="b1Vision" class="box-section"></div>
+    <div id="b1OKR" class="box-section" style="display:none;"></div>
+  `;
+  renderD1(document.getElementById('b1Vision'));
+  renderOKR(document.getElementById('b1OKR'));
+}
+function switchB1View(view, tab) {
+  document.querySelectorAll('.box-tabs .box-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('b1Vision').style.display = view === 'vision' ? '' : 'none';
+  document.getElementById('b1OKR').style.display = view === 'okr' ? '' : 'none';
+}
+
 // B2: 组织结构 (Structure) — 组织架构 + 职能分工
-function renderB2(el) { renderOrg(el); }
+function renderB2(el) {
+  el.innerHTML = `
+    <div class="page-header" style="margin-bottom:28px;">
+      <span class="dim-tag dim-tag-b2">BOX 2 · 组织结构</span>
+      <h2>组织结构 — Structure</h2>
+      <p style="color:var(--text-muted);font-size:13px;margin-top:4px;">四层模块化组织架构 · 7级职等体系 · 职能分工 · RACI责任矩阵</p>
+    </div>
+    <div class="box-tabs">
+      <div class="box-tab active" onclick="switchB2View('org', this)">组织架构与权责边界</div>
+      <div class="box-tab" onclick="switchB2View('func', this)">职能分工与RACI矩阵</div>
+    </div>
+    <div id="b2Org" class="box-section"></div>
+    <div id="b2Func" class="box-section" style="display:none;"></div>
+  `;
+  renderOrg(document.getElementById('b2Org'));
+  renderFunc(document.getElementById('b2Func'));
+}
+function switchB2View(view, tab) {
+  document.querySelectorAll('.box-tabs .box-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('b2Org').style.display = view === 'org' ? '' : 'none';
+  document.getElementById('b2Func').style.display = view === 'func' ? '' : 'none';
+}
+
 // B3: 关系与协作 (Relationships) — 人员与人才
 function renderB3(el) { renderHR(el); }
-// B4: 奖励与激励 (Rewards) — 绩效与指标 + 薪酬激励
+
+// B4: 奖励与激励 (Rewards) — 绩效与指标 + 薪酬激励 + 晋升通道
 function renderB4(el) { renderD8(el); }
-// B5: 领导力 (Leadership) — 治理与决策
+
+// B5: 领导力 (Leadership) — 治理与决策 · 领导团队
 function renderB5(el) { renderSettings(el); }
-// B6: 支持机制 (Helpful Mechanisms) — 流程制度 + 渠道产品 + 技术数字化
-function renderB6(el) { renderOps(el); }
+
+// B6: 支持机制 (Helpful Mechanisms) — 流程制度 + 技术数字化 + 渠道产品 + 大后台自动化
+function renderB6(el) {
+  el.innerHTML = `
+    <div class="page-header" style="margin-bottom:28px;">
+      <span class="dim-tag dim-tag-b6">BOX 6 · 支持机制</span>
+      <h2>支持机制 — Helpful Mechanisms</h2>
+      <p style="color:var(--text-muted);font-size:13px;margin-top:4px;">端到端流程 · 制度管理 · 客户渠道 · 技术平台 · 数据系统 · 大后台自动化</p>
+    </div>
+    <div class="box-tabs">
+      <div class="box-tab active" onclick="switchB6View('ops', this)">流程与制度</div>
+      <div class="box-tab" onclick="switchB6View('crm', this)">渠道与产品</div>
+      <div class="box-tab" onclick="switchB6View('data', this)">技术数字化</div>
+      <div class="box-tab" onclick="switchB6View('obj3', this)">大后台自动化</div>
+    </div>
+    <div id="b6Ops" class="box-section"></div>
+    <div id="b6CRM" class="box-section" style="display:none;"></div>
+    <div id="b6Data" class="box-section" style="display:none;"></div>
+    <div id="b6Obj3" class="box-section" style="display:none;"></div>
+  `;
+  renderOps(document.getElementById('b6Ops'));
+  renderCRM(document.getElementById('b6CRM'));
+  renderData(document.getElementById('b6Data'));
+  renderObj3(document.getElementById('b6Obj3'));
+}
+function switchB6View(view, tab) {
+  document.querySelectorAll('.box-tabs .box-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('b6Ops').style.display = view === 'ops' ? '' : 'none';
+  document.getElementById('b6CRM').style.display = view === 'crm' ? '' : 'none';
+  document.getElementById('b6Data').style.display = view === 'data' ? '' : 'none';
+  document.getElementById('b6Obj3').style.display = view === 'obj3' ? '' : 'none';
+}
 
 // ========== ICON LIBRARY ==========
 function icon(name, size) {
@@ -2420,8 +2512,8 @@ function renderD8(el) {
   el.innerHTML = `
     <div class="page-header">
       <span class="dim-tag dim-tag-b4">BOX 4 · 奖励与激励</span>
-      <h2>绩效与指标 — 四级流程化KPI考核体系</h2>
-      <p>L1-BU级(经营结果+流程效率) → L2-部门级(专业指标+协作效率) → L3-人员级(个人执行+行为规范) → L4-职能级(流程节点+操作质量) · 月度跟踪+季度考核+年度汇总</p>
+      <h2>奖励与激励 — Rewards</h2>
+      <p>四级流程化KPI考核体系 · 薪酬激励 · 晋升通道 · L1-BU级(经营结果+流程效率) → L2-部门级(专业指标+协作效率) → L3-人员级(个人执行+行为规范) → L4-职能级(流程节点+操作质量) · 月度跟踪+季度考核+年度汇总</p>
     </div>
 
     <div class="stats-row">
@@ -5093,8 +5185,8 @@ function renderHR(el) {
   el.innerHTML = `
     <div class="page-header">
       <span class="dim-tag dim-tag-b3">BOX 3 · 关系与协作</span>
-      <h2>人员与人才管理</h2>
-      <p>岗位编制 · 岗位说明书 · 能力要求 · 绩效考核 · ${employees.length}名在册人员 · 7级职等 · 管培生梯队(含6名管培生)</p>
+      <h2>关系与协作 — Relationships</h2>
+      <p>人员编制 · 团队协作 · 跨部门沟通 · 岗位说明书 · 能力要求 · ${employees.length}名在册人员 · 7级职等 · 管培生梯队(含6名管培生)</p>
     </div>
 
     <div class="stats-row">
@@ -5570,8 +5662,8 @@ function renderSettings(el) {
   el.innerHTML = `
     <div class="page-header">
       <span class="dim-tag dim-tag-b5">BOX 5 · 领导力</span>
-      <h2>治理与决策机制</h2>
-      <p>RACI权责矩阵 · 审批流 · 分级决策权限 · 印章管控 · 审计日志 · 治理规则</p>
+      <h2>领导力 — Leadership</h2>
+      <p>领导团队 · 治理结构 · 决策框架 · RACI权责矩阵 · 审批流 · 分级决策权限 · 印章管控 · 审计日志</p>
     </div>
     <div class="stats-row">
       <div class="stat-card">
