@@ -2775,11 +2775,6 @@ function renderD8(el) {
 // ========== ORG: 组织架构 ==========
 function renderOrg(el) {
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b2">BOX 2 · 组织结构</span>
-      <h2>组织架构与权责边界</h2>
-      <p>四层模块化组织架构 · 7级职等体系(Ⅰ-Ⅶ) · 大部制(BU)+矩阵式管理 · ${employees.length}名在册人员</p>
-    </div>
     <div class="tabs">
       <div class="tab active" onclick="switchOrgView('tree', this)">树状架构图</div>
       <div class="tab" onclick="switchOrgView('enhanced', this)">四级战略落地架构</div>
@@ -3963,12 +3958,6 @@ function renderFunc(el) {
   const total = functions.length;
 
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b2">BOX 2 · 职能分工</span>
-      <h2>职能分工与RACI角色分配</h2>
-      <p>${cats.length}大职能板块 · ${total}项职能动作 · RACI责任矩阵 · 职能→人员映射 · 全维度可视化</p>
-    </div>
-
     <div class="stats-row">
       <div class="stat-card" style="border-top:3px solid var(--b2);">
         <div class="label">职能板块</div><div class="value">${cats.length}</div>
@@ -4258,12 +4247,6 @@ function showCatDetail(idx) {
 function renderOps(el) {
   const opsPolicies = policies.filter(p => ['B2','B5','B6'].includes(p.tomDim));
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b3">BOX 3 · 端到端流程与制度</span>
-      <h2>端到端流程与制度管理</h2>
-      <p>客户全生命周期 · 招聘交付 · 薪酬结算 · 员工入离职 · 风控合规 · 跨部门交接SOP</p>
-    </div>
-
     <!-- Sub-tabs -->
     <div class="tabs" style="margin-bottom:16px;">
       <div class="tab active" onclick="switchOpsView('recruitment', this)">招聘流程</div>
@@ -4742,12 +4725,6 @@ function renderCRM(el) {
   const scaleCounts = {};
   customers.forEach(c => { scaleCounts[c.scale] = (scaleCounts[c.scale] || 0) + 1; });
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b5">BOX 5 · 渠道与产品</span>
-      <h2>渠道与产品</h2>
-      <p>对外人力服务产品 · 灵活用工/劳务派遣/猎头/驻场外包 · ${customers.length}家客户 · ${[...new Set(customers.map(c=>c.type))].length}大产品线</p>
-    </div>
-
     <div class="stats-row">
       <div class="stat-card">
         <span style="color:var(--accent);margin-bottom:4px;">${icon('users', 24)}</span>
@@ -5134,11 +5111,6 @@ function renderObj3(el) {
   const layer1Members = TEAM_MEMBERS.filter(m => m.layer.includes('第一层'));
 
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b5">BOX 5 · 大后台自动化</span>
-      <h2>大后台自动化协作工作系统</h2>
-      <p style="color:var(--text-muted);font-size:13px;">事（用印档案）· 人（人事事务）· 钱（HKMS+财务账务）三大系统自动化</p>
-    </div>
     <div class="stats-row">
       <div class="stat-card"><div class="label">自动化系统</div><div class="value">3</div></div>
       <div class="stat-card"><div class="label">RACI任务</div><div class="value">${systems.reduce((s, sys) => s + sys.tasks.length, 0)}</div></div>
@@ -5233,12 +5205,6 @@ function renderHR(el) {
   ];
 
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b3">BOX 3 · 人员与团队</span>
-      <h2>人员与团队</h2>
-      <p>岗位编制 · 岗位说明书 · 能力要求 · 团队协作 · ${employees.length}名在册人员 · 7级职等 · 管培生梯队(含6名管培生)</p>
-    </div>
-
     <div class="stats-row">
       <div class="stat-card">
         <span style="color:var(--accent);margin-bottom:4px;">${icon('users', 24)}</span>
@@ -5522,12 +5488,6 @@ function renderData(el) {
   const activeProjects = tasks.filter(t=>t.status==='in-progress').length;
 
   el.innerHTML = `
-    <div class="page-header">
-      <span class="dim-tag dim-tag-b5">BOX 5 · 技术与数字化</span>
-      <h2>技术与数字化</h2>
-      <p>内部管理后台 · 客户CRM · 薪酬系统 · 数据看板 · 报表口径 · 数据权限管理</p>
-    </div>
-
     <div class="stats-row">
       <div class="stat-card">
         <span style="color:var(--c-blue);margin-bottom:4px;">${icon('users', 24)}</span>
