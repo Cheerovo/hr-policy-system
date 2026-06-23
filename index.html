@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>HRO 时代开弈集团 — TOM Six-Box Model · HR Policy System</title>
+<title>HRO 时代开弈集团 — HR Policy System</title>
 <style>
 /* ===== SOFT WARM MODERN DESIGN SYSTEM ===== */
 :root {
@@ -84,7 +84,7 @@
   --tracking-wide: 0.5px;
   --tracking-label: 0.3px;
 
-  /* Weisbord Six-Box Model colors — distinct, harmonious */
+  /* Weisbord TOM Model colors */
   --b1: #6B7DB3;   --b1-bg: #EEF1F8;   /* B1 目的与目标 — blue */
   --b2: #7A9A8C;   --b2-bg: #EDF4F0;   /* B2 组织结构 — teal-green */
   --b3: #B8926A;   --b3-bg: #F8F2EA;   /* B3 关系与协作 — warm amber */
@@ -419,7 +419,7 @@ tbody tr:hover { background: var(--bg-surface-hover); }
 .tab:hover { color: var(--text); }
 .tab.active { color: var(--accent-dim); border-bottom-color: var(--accent); font-weight: 400; }
 
-/* ===== BOX TABS (Six-Box sub-tabs) — pill style to differentiate from .tabs ===== */
+/* ===== BOX TABS — pill style ===== */
 .box-tabs { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
 .box-tab {
   padding: 7px 18px; cursor: pointer; font-size: 12px; color: var(--text-dim);
@@ -1087,7 +1087,7 @@ tbody tr:hover { background: var(--bg-surface-hover); }
     <div class="neo-avatar"><svg viewBox="0 0 24 24" width="42" height="42"><circle cx="12" cy="8" r="4" stroke="currentColor" fill="none" stroke-width="1.5"/><path d="M4 21v-1.5c0-3 3.5-6 8-6s8 3 8 6V21" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div>
     <h1>HRO 时代开弈集团</h1>
     <div class="subtitle">人力资源综合大后台管理系统</div>
-    <div class="tom-badge">TOM · Weisbord Six-Box Model</div>
+    <div class="tom-badge">TOM · Weisbord Model</div>
     <label>用户名</label>
     <input type="text" id="loginUser" placeholder="请输入用户名" autocomplete="off" />
     <label>密码</label>
@@ -1122,7 +1122,7 @@ tbody tr:hover { background: var(--bg-surface-hover); }
       </a>
 
       <div class="nav-section-label" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:8px 8px 3px;" onclick="toggleNavGroup('tom-core')">
-        <span style="font-size:9px;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;">Six-Box Model</span>
+        
         <span style="font-size:9px;color:var(--text-muted);" id="tomCoreArrow">▼</span>
       </div>
       <div id="tom-core" style="display:block;">
@@ -1288,12 +1288,12 @@ function navTo(page, el) {
   // Breadcrumb map
   const bcMap = {
     dashboard: ['总览'],
-    b1: ['Six-Box Model', '1 目的与目标'],
-    b2: ['Six-Box Model', '2 组织结构'],
-    b3: ['Six-Box Model', '3 关系与协作'],
-    b4: ['Six-Box Model', '4 奖励与激励'],
-    b5: ['Six-Box Model', '5 支撑机制'],
-    b6: ['Six-Box Model', '6 领导力'],
+    b1: ['1 目的与目标'],
+    b2: ['2 组织结构'],
+    b3: ['3 关系与协作'],
+    b4: ['4 奖励与激励'],
+    b5: ['5 支撑机制'],
+    b6: ['6 领导力'],
     okr: ['快速入口', 'OKR 核心目标'],
     obj3: ['快速入口', '大后台自动化'],
   };
@@ -1326,7 +1326,7 @@ function navTo(page, el) {
   mc.scrollTop = 0;
 }
 
-// ========== SIX-BOX RENDER FUNCTIONS ==========
+// ========== TOM RENDER FUNCTIONS ==========
 
 // B1: 目的与目标 (Purposes) — 愿景战略 + 战略目标/OKR
 function renderB1(el) {
@@ -1588,7 +1588,7 @@ function renderDashboard(el) {
       </div>
     </div>
 
-    <h3 style="font-size:14px;margin:0 0 12px;color:var(--text);">TOM Six-Box Model · Weisbord</h3>
+    <h3 style="font-size:14px;margin:0 0 12px;color:var(--text);">TOM · Weisbord Model</h3>
     <div class="dash-tom-wheel">
       ${Object.entries(dimStats).map(([key, d]) => {
         const dimIcons = { b1:'target', b2:'building', b3:'users', b4:'chart', b5:'cpu', b6:'shield' };
