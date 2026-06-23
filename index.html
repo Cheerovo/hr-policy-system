@@ -1087,8 +1087,7 @@ tbody tr:hover { background: var(--bg-surface-hover); }
     <div class="neo-avatar"><svg viewBox="0 0 24 24" width="42" height="42"><circle cx="12" cy="8" r="4" stroke="currentColor" fill="none" stroke-width="1.5"/><path d="M4 21v-1.5c0-3 3.5-6 8-6s8 3 8 6V21" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></div>
     <h1>HRO 时代开弈集团</h1>
     <div class="subtitle">人力资源综合大后台管理系统</div>
-    <div class="tom-badge">TOM 系统模型</div>
-    <label>用户名</label>
+        <label>用户名</label>
     <input type="text" id="loginUser" placeholder="请输入用户名" autocomplete="off" />
     <label>密码</label>
     <input type="password" id="loginPass" placeholder="请输入密码" autocomplete="off" onkeydown="if(event.key==='Enter')doLogin()" />
@@ -1588,8 +1587,7 @@ function renderDashboard(el) {
       </div>
     </div>
 
-    <h3 style="font-size:14px;margin:0 0 12px;color:var(--text);">TOM 系统模型</h3>
-    <div class="dash-tom-wheel">
+        <div class="dash-tom-wheel">
       ${Object.entries(dimStats).map(([key, d]) => {
         const dimIcons = { b1:'target', b2:'building', b3:'users', b4:'chart', b5:'cpu', b6:'shield' };
         return `
